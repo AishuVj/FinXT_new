@@ -15,10 +15,11 @@ export default function ServicesSection() {
   return (
     <section className="bg-[#0D1B3E] px-6 py-20 text-white">
       <div className="mx-auto max-w-7xl">
-        <div className="mb-12 text-center">
-          <p className="finxt-label mb-4">What We Deliver</p>
-          <h2 className="finxt-heading text-4xl md:text-5xl">Eight integrated services. One trusted partner.</h2>
-          <p className="mx-auto mt-5 max-w-2xl text-white/65">Every service is available standalone or as part of a fully managed end-to-end solution.</p>
+        <div >
+          <p className="finxt-label mb-5">What We Deliver</p>
+          <h2 className="text-2xl font-black leading-tight tracking-tight md:text-4xl">Eight integrated services. One trusted partner.</h2>
+          <div className="mt-5 h-1 w-14 rounded-full bg-[#C9A84C]" />
+          <p className="mt-8 space-y-5 text-sm leading-7 text-white/70 md:text-base">Every service is available standalone or as part of a fully managed end-to-end solution.</p>
         </div>
         <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
           {services.map(([icon, title, desc]) => (

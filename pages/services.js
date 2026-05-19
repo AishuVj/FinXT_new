@@ -111,15 +111,15 @@ export default function Services() {
   return (
     <Layout>
       <section className="bg-[linear-gradient(135deg,#050912,#0A0F1E,#0D1B3E)] px-6 py-20 text-white">
-        <div className="mx-auto max-w-6xl text-center">
+        <div className="mx-auto max-w-6xl">
           <p className="finxt-label mb-5">Our Services</p>
 
-          <h1 className="mx-auto max-w-4xl text-2xl font-black leading-tight tracking-tight md:text-4xl">
+          <h1 className="finxt-heading max-w-4xl text-3xl md:text-5xl leading-tight">
             End-to-End Operational Excellence Across{' '}
             <span className="text-[#C9A84C]">8 Domains</span>
           </h1>
 
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
             All services are available standalone or as a fully integrated
             managed solution — one partner, total delivery.
           </p>

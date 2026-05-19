@@ -30,7 +30,7 @@ export default function About() {
         <div className="mx-auto max-w-6xl">
           <p className="finxt-label mb-5">About FinXT UK</p>
 
-          <h1 className="max-w-4xl text-2xl font-black leading-tight tracking-tight md:text-4xl">
+          <h1 className="finxt-heading max-w-4xl text-3xl md:text-5xl leading-tight">
             Built for Complexity. Trusted for{' '}
             <span className="text-[#C9A84C]">Excellence.</span>
           </h1>
@@ -130,28 +130,30 @@ export default function About() {
       </section>
 
       <section className="bg-[#F4F6FB] px-6 py-20 text-[#0A0F1E]">
-        <div className="mx-auto max-w-6xl text-center">
+        <div >
           <p className="finxt-label mb-5 text-[#A07D30]">
             What We Stand For
           </p>
+          
 
           <h2 className="text-2xl font-black tracking-tight md:text-4xl">
             Our Values
           </h2>
+          <div className="mt-5 h-1 w-14 rounded-full bg-[#C9A84C]" />
 
           <div className="mt-12 grid gap-6 md:grid-cols-4">
             {values.map((value) => (
               <div
                 key={value.title}
-                className="rounded-2xl bg-[#162444] p-6 text-left text-white shadow-xl md:p-7"
+                className="mt-12 rounded-2xl border-l-4 border-[#C9A84C] bg-white p-8 text-center text-[#0A0F1E] shadow-sm md:p-12"
               >
                 <div className="mb-6 text-2xl">{value.icon}</div>
 
-                <h3 className="mb-3 text-base font-semibold">
+                <h3 className="mb-3 text-xl font-bold text-[#0A0F1E]">
                   {value.title}
                 </h3>
 
-                <p className="text-sm leading-7 text-white/70">
+                <p className="text-sm leading-7 text-[#2D3748]">
                   {value.text}
                 </p>
               </div>

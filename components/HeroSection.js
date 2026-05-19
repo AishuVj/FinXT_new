@@ -8,7 +8,7 @@ export default function HeroSection() {
         <h1 className="finxt-heading max-w-4xl text-3xl md:text-5xl leading-tight">
           Powering Global Programs with <span className="text-[#C9A84C]">Precision, Speed</span> and <span className="text-[#C9A84C]">Scale</span>
         </h1>
-        <p className="mt- max-w-2xl text-lg leading-8 text-white/75 md:text-xl">
+        <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg"> 
           FinXT UK is the integrated delivery partner for organisations running complex, multi-country operations — from logistics and staffing to research and payments.
         </p>
         <div className="mt-10 flex flex-wrap gap-4">
