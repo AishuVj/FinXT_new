@@ -1,0 +1,182 @@
+import Layout from '../components/Layout';
+
+export default function About() {
+  const values = [
+    {
+      icon: '🤝',
+      title: 'Integrity First',
+      text: 'We operate with transparency, honesty and discretion in every engagement.',
+    },
+    {
+      icon: '⭐',
+      title: 'Operational Excellence',
+      text: 'We set high standards and hold ourselves to them across every project.',
+    },
+    {
+      icon: '🎯',
+      title: 'Client Partnership',
+      text: 'Your success is our success. We measure every engagement by outcomes.',
+    },
+    {
+      icon: '🌐',
+      title: 'Global Mindset',
+      text: 'Every process and partnership is built to support global delivery.',
+    },
+  ];
+
+  return (
+    <Layout>
+      <section className="bg-[linear-gradient(135deg,#050912,#0A0F1E,#0D1B3E)] px-6 py-20 text-white">
+        <div className="mx-auto max-w-6xl">
+          <p className="finxt-label mb-5">About FinXT UK</p>
+
+          <h1 className="max-w-4xl text-2xl font-black leading-tight tracking-tight md:text-4xl">
+            Built for Complexity. Trusted for{' '}
+            <span className="text-[#C9A84C]">Excellence.</span>
+          </h1>
+
+          <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
+            FinXT UK delivers operational, research, and technology-enabled
+            support services from London across the UK, Europe, and global
+            markets.
+          </p>
+        </div>
+      </section>
+
+      <section className="bg-[#0D1B3E] px-6 py-16 text-white">
+        <div className="mx-auto grid max-w-6xl gap-8 lg:grid-cols-[1.1fr_1fr]">
+          <div>
+            <p className="finxt-label mb-5">Our Story</p>
+
+            <h2 className="text-2xl font-black leading-tight tracking-tight md:text-4xl">
+              One Vision. Total Execution.
+            </h2>
+
+            <div className="mt-5 h-1 w-14 rounded-full bg-[#C9A84C]" />
+
+            <div className="mt-8 space-y-5 text-sm leading-7 text-white/70 md:text-base">
+              <p>
+                FinXT UK was founded with a clear belief: organisations running
+                complex international programmes deserve one expert delivery
+                partner, not a fragmented network of suppliers.
+              </p>
+
+              <p>
+                From our London base, we combine operational expertise,
+                regulatory knowledge, and on-ground capability across the UK and
+                Europe.
+              </p>
+
+              <p>
+                Our integrated model gives clients one point of accountability
+                and a consistent experience from first briefing to final
+                delivery.
+              </p>
+            </div>
+          </div>
+
+          <div className="rounded-2xl border border-white/10 bg-[#162444] p-6 shadow-xl md:p-8">
+            <p className="finxt-label mb-6">Our Reach</p>
+
+            <div className="space-y-7">
+              <div>
+                <h3 className="mb-2 text-base font-semibold">
+                  🇬🇧 United Kingdom — HQ
+                </h3>
+                <p className="text-sm leading-7 text-white/60">
+                  London-headquartered with operational delivery capability
+                  across the UK.
+                </p>
+              </div>
+
+              <div>
+                <h3 className="mb-4 text-base font-semibold">
+                  🇪🇺 Europe — Core Market
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {['Germany', 'France', 'Netherlands', 'Spain', 'Poland', 'Nordics'].map(
+                    (item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-[#C9A84C]/40 px-4 py-2 text-sm font-semibold text-[#C9A84C]"
+                      >
+                        {item}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+
+              <div>
+                <h3 className="mb-4 text-base font-semibold">
+                  🌍 Global — Scalable Delivery
+                </h3>
+                <div className="flex flex-wrap gap-3">
+                  {['Americas', 'Middle East', 'Asia-Pacific', 'Africa'].map(
+                    (item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-[#C9A84C]/40 px-4 py-2 text-sm font-semibold text-[#C9A84C]"
+                      >
+                        {item}
+                      </span>
+                    )
+                  )}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F4F6FB] px-6 py-20 text-[#0A0F1E]">
+        <div className="mx-auto max-w-6xl text-center">
+          <p className="finxt-label mb-5 text-[#A07D30]">
+            What We Stand For
+          </p>
+
+          <h2 className="text-2xl font-black tracking-tight md:text-4xl">
+            Our Values
+          </h2>
+
+          <div className="mt-12 grid gap-6 md:grid-cols-4">
+            {values.map((value) => (
+              <div
+                key={value.title}
+                className="rounded-2xl bg-[#162444] p-6 text-left text-white shadow-xl md:p-7"
+              >
+                <div className="mb-6 text-2xl">{value.icon}</div>
+
+                <h3 className="mb-3 text-base font-semibold">
+                  {value.title}
+                </h3>
+
+                <p className="text-sm leading-7 text-white/70">
+                  {value.text}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#F4F6FB] px-6 py-20 text-center text-[#0A0F1E]">
+  <h2 className="text-2xl font-black tracking-tight md:text-4xl">
+    Want to Know More?
+  </h2>
+
+  <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#2D3748]">
+    Speak with our team to discuss how FinXT UK can support your next
+    initiative.
+  </p>
+
+  <a
+    href="/contact"
+    className="mt-8 inline-flex rounded-lg bg-[#C9A84C] px-8 py-4 text-sm font-bold text-[#0A0F1E] transition hover:bg-[#E8C96A]"
+  >
+    Get in Touch →
+  </a>
+</section>
+    </Layout>
+  );
+}

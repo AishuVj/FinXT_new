@@ -1,0 +1,17 @@
+.heading-primary {
+  font-size: 2.5rem;
+  font-family: 'Playfair Display', serif;
+  font-weight: 600;
+  letter-spacing: 0.015em;
+  line-height: 1.3;
+  color: #2f6d6a;
+}
+
+.paragraph {
+  font-size: 1.125rem;
+  font-family: 'Inter', sans-serif;
+  line-height: 1.8;
+  letter-spacing: 0.02em;
+  color: #4a4a4a;
+}
+
