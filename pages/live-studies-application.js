@@ -88,7 +88,7 @@ function Checkbox({ name, value, children, required = false }) {
 
 export default function LiveStudiesApplicationPage() {
   const router = useRouter();
-  const { country, lang = 'en' } = router.query;
+  const { country = 'leeds', lang = 'en' } = router.query;
 
   const [ethnicity, setEthnicity] = useState('');
 
