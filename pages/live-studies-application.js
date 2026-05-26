@@ -94,6 +94,12 @@ export default function LiveStudiesApplicationPage() {
 
   const isSpanish = lang === 'es';
   const isPolish = lang === 'pl';
+  const language =
+    country === 'spain' || country === 'mexico'
+      ? 'Spanish'
+      : country === 'poland'
+      ? 'Polish'
+      : 'English';
 
   const studyTerms = isSpanish
   ? [
@@ -302,6 +308,8 @@ const siblingPayment =
             netlify-honeypot="bot-field"
             action="/Thankyou"
           >
+            <input type="hidden" name="country" value={country} />
+            <input type="hidden" name="language" value={language} />
             <input type="hidden" name="form-name" value="live-studies-application" />
             <p className="hidden">
               <label>Don’t fill this out if you're human: <input name="bot-field" /></label>
