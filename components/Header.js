@@ -10,8 +10,8 @@ export default function Header() {
     { href: '/', label: 'Home' },
     { href: '/aboutus', label: 'About' },
     { href: '/services', label: 'Services' },
-    { href: '/live-studies-application', label: 'Live Studies' },
-    { href: '/career', label: 'Careers' },
+    { href: '/live-studies', label: 'Live Studies' },
+
   ];
 
   return (
@@ -49,7 +49,14 @@ export default function Header() {
               {item.label}
             </Link>
           ))}
-          <Link href="/contact" className="ml-2 rounded-md bg-[#C9A84C] px-5 py-2.5 text-sm font-bold text-[#0A0F1E] transition hover:bg-[#E8C96A]">
+          <Link
+            href="/contact"
+            className={`rounded-md px-4 py-2 text-sm font-semibold transition ${
+              pathname === '/contact'
+                ? 'bg-[#162444] text-white'
+                : 'text-[#A9B6D3] hover:bg-[#162444] hover:text-white'
+            }`}
+          >
             Contact Us
           </Link>
         </nav>

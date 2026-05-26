@@ -1,186 +1,344 @@
+import { useState } from 'react';
 import Layout from '../components/Layout';
 
 export default function Services() {
+  const [openCard, setOpenCard] = useState(null);
+
   const services = [
     {
-      icon: '👥',
-      title: 'Crowdsourcing Solutions',
-      text: 'Access to a vetted, diverse pool of participants across 30+ countries. We handle end-to-end recruitment, screening, scheduling, and coordination — delivering the right people, at the right time, anywhere in the world.',
+      icon: '💡',
+      title: 'AI Strategy and Readiness Consulting',
       points: [
-        'Geo-targeted participant recruitment',
-        'Demographic and linguistic profiling',
-        'GDPR-compliant data handling',
-        'Rapid mobilisation — 50 to 5,000+ participants',
-        'Multi-lingual support across European markets',
-        'Fully managed or component-based delivery',
+        'Our comprehensive AI Strategy & Readiness Consulting helps businesses identify, evaluate, and implement AI solutions that align with their strategic goals.',
+        'We provide clear roadmaps, risk assessments, and readiness checks, ensuring a smooth and effective transition into AI-driven operations.',
       ],
     },
     {
-      icon: '⚙️',
-      title: 'Programme Management',
-      text: 'Structured, outcome-focused oversight of complex multi-workstream programmes. Our experienced PMs bring discipline, rigour, and real-world cross-sector experience to every engagement.',
+      icon: '🤖',
+      title: 'Custom AI Chatbot Development',
       points: [
-        'Governance frameworks and RAID management',
-        'Budget tracking and financial reporting',
-        'Stakeholder communication plans',
-        'Agile and waterfall delivery methodologies',
-        'Vendor and partner coordination',
-        'Executive dashboards and KPI reporting',
+        'FinXT develops intelligent and responsive AI chatbots and virtual assistants tailored to your business needs.',
+        'Our solutions automate repetitive tasks, enhance customer engagement, and provide reliable 24/7 support to improve productivity and customer satisfaction.',
       ],
     },
     {
-      icon: '🚚',
-      title: 'Logistics & Secure Shipment',
-      text: 'Reliable transport of equipment and sensitive assets across the UK, Europe, and beyond — with full chain-of-custody, bonded warehousing, and complete insurance.',
+      icon: '📊',
+      title: 'AI-Enhanced Data Insights',
       points: [
-        'Same-day, next-day and scheduled freight',
-        'High-value and sensitive asset handling',
-        'Bonded warehouse and secure storage',
-        'Full tracking and audit trail',
-        'White-glove delivery for research equipment',
-        'Cross-border customs clearance support',
+        'Our AI-enhanced data analytics services uncover deep, actionable insights from complex datasets, enabling smarter decisions, increased efficiency, and strategic growth.',
+        'Harness predictive analytics, real-time insights, and automated reporting for impactful outcomes.',
       ],
     },
     {
-      icon: '📋',
-      title: 'ATA Carnet Handling',
-      text: 'Simplify international temporary import/export with expert carnet management — reducing delays, duties, and administrative burden across 87+ signatory countries.',
+      icon: '🔐',
+      title: 'AI Cybersecurity & Threat Detection',
       points: [
-        'Carnet preparation and documentation',
-        'Customs authority liaison',
-        'Trade show, production, and research applications',
-        'Cross-border equipment loans',
-        'Post-event re-exportation management',
-        'Compliance with international carnet standards',
+        'Our AI cybersecurity solutions use advanced machine learning algorithms and predictive analytics to proactively detect, prevent, and mitigate cybersecurity threats.',
+        'Trust FinXT to safeguard your business, data integrity, and customer trust with the latest cybersecurity technologies.',
       ],
     },
     {
-      icon: '🏗️',
-      title: 'Site Setup & Deployment',
-      text: 'From site survey to teardown — we deploy operational sites, testing labs, and pop-up research environments with speed and precision across multiple locations simultaneously.',
+      icon: '⚖️',
+      title: 'Compliance-Focused AI Advisory',
       points: [
-        'End-to-end site survey and logistics planning',
-        'IT infrastructure and network configuration',
-        'Equipment provisioning and staging',
-        'Multi-site parallel deployments',
-        'On-site technical support during operations',
-        'Post-project teardown and asset return',
-      ],
-    },
-    {
-      icon: '👔',
-      title: 'Staffing Solutions, Payroll & EOR',
-      text: 'Flexible workforce solutions — from skilled project personnel to full Employer of Record and payroll management services across UK and EU markets.',
-      points: [
-        'Technical, operational, and research staffing',
-        'Short-term project and long-term embedded teams',
-        'Employer of Record — hire without a local entity',
-        'Payroll management across multiple countries',
-        'Rapid onboarding with full compliance',
-        'Benefits, contracts, and tax management',
-      ],
-    },
-    {
-      icon: '🔬',
-      title: 'User Study & Research Support',
-      text: 'Full-cycle facilitation of user research — from participant recruitment through moderated sessions to actionable insights delivery, in multiple languages and markets.',
-      points: [
-        'Participant recruitment',
-        'Screener design and qualification',
-        'Moderated and unmoderated session support',
-        'Data collection and analysis',
-        'Multi-lingual and multi-country research',
-        'Professional participant coordination',
+        'FinXT provides compliance-focused AI advisory services that ensure your AI solutions are transparent, ethical, and fully compliant with industry standards.',
+        'We navigate regulatory complexities, ensuring your peace of mind.',
       ],
     },
     {
       icon: '💳',
-      title: 'Payment & Reward Solutions',
-      text: 'Secure, compliant, and cost-effective payment systems managing rewards, reimbursements, and vendor payments across multiple countries and currencies — with a 100% success rate.',
+      title: 'Smart Payment Integration Solutions',
       points: [
-        'Participant reward distribution',
-        'Multi-currency payment processing',
-        'Vendor payment management',
-        'Research study reimbursements',
-        'Compliant with payment regulations',
-        'Full audit trail and reporting',
+        'Our smart payment solutions seamlessly integrate advanced technologies, enhancing transaction security, efficiency, and user experience.',
+        'Benefit from frictionless payment systems, secure transaction processing, and scalable integration tailored specifically to your needs.',
+      ],
+    },
+    {
+      icon: '🎁',
+      title: 'Reward & Loyalty Solutions and Platform Development',
+      points: [
+        'Boost customer loyalty and retention through sophisticated, personalized reward systems and platforms developed by FinXT.',
+        'Our AI-driven platforms enhance customer engagement, track user preferences, and deliver meaningful incentives tailored precisely to your customer base.',
+      ],
+    },
+    {
+      icon: '📣',
+      title: 'AI in Marketing, Content & Branding',
+      points: [
+        'Transform your marketing and branding strategies with FinXT’s AI-driven solutions, designed to deliver personalized content, predictive market analysis, and targeted branding campaigns.',
+        'Maximize your marketing ROI and brand impact through AI-optimized strategies.',
       ],
     },
   ];
+  const ServiceVisual = ({ idx }) => {
+  const visuals = [
+    {
+      color: '#C9A84C',
+      title: 'AI',
+      shape: 'strategy',
+    },
+    {
+      color: '#4EA1FF',
+      title: 'BOT',
+      shape: 'chat',
+    },
+    {
+      color: '#35D0A3',
+      title: 'DATA',
+      shape: 'data',
+    },
+    {
+      color: '#F25F5C',
+      title: 'SEC',
+      shape: 'security',
+    },
+    {
+      color: '#A78BFA',
+      title: 'LAW',
+      shape: 'compliance',
+    },
+    {
+      color: '#22D3EE',
+      title: 'PAY',
+      shape: 'payments',
+    },
+    {
+      color: '#E4B947',
+      title: 'VIP',
+      shape: 'loyalty',
+    },
+    {
+      color: '#EC4899',
+      title: 'AI',
+      shape: 'marketing',
+    },
+  ];
+
+  const visual = visuals[idx];
 
   return (
+    <div className="relative mb-6 h-48 overflow-hidden rounded-2xl border border-white/10 bg-[#081126]">
+      <div
+        className="absolute inset-0"
+        style={{
+          background: `radial-gradient(circle at 30% 30%, ${visual.color}33, transparent 34%), linear-gradient(135deg, #0B1325 0%, #050912 100%)`,
+        }}
+      />
+
+      <div className="absolute inset-0 opacity-25 bg-[linear-gradient(rgba(255,255,255,0.08)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.08)_1px,transparent_1px)] bg-[size:28px_28px]" />
+
+      <div
+        className="absolute -right-10 -top-10 h-40 w-40 rounded-full blur-3xl transition duration-500 group-hover:scale-125"
+        style={{ backgroundColor: `${visual.color}30` }}
+      />
+
+      <div className="absolute left-1/2 top-1/2 h-28 w-28 -translate-x-1/2 -translate-y-1/2 rounded-full border border-white/10" />
+      <div
+        className="absolute left-1/2 top-1/2 h-20 w-20 -translate-x-1/2 -translate-y-1/2 rounded-full border"
+        style={{ borderColor: `${visual.color}70` }}
+      />
+
+      <div
+        className="absolute left-1/2 top-1/2 flex h-20 w-20 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-3xl border bg-black/25 text-lg font-black tracking-tight backdrop-blur-md transition duration-500 group-hover:scale-110"
+        style={{
+          borderColor: `${visual.color}70`,
+          color: visual.color,
+          boxShadow: `0 0 40px ${visual.color}25`,
+        }}
+      >
+        {visual.title}
+      </div>
+
+      {visual.shape === 'strategy' && (
+        <>
+          <div className="absolute left-8 top-10 h-2 w-32 rounded-full bg-[#C9A84C]/70" />
+          <div className="absolute left-8 top-20 h-2 w-24 rounded-full bg-white/25" />
+          <div className="absolute left-8 top-30 h-2 w-16 rounded-full bg-white/15" />
+        </>
+      )}
+
+      {visual.shape === 'chat' && (
+        <>
+          <div className="absolute left-7 top-9 h-12 w-36 rounded-2xl border border-blue-300/35 bg-white/5" />
+          <div className="absolute right-7 bottom-10 h-12 w-36 rounded-2xl border border-[#C9A84C]/35 bg-white/5" />
+        </>
+      )}
+
+      {visual.shape === 'data' && (
+        <div className="absolute bottom-8 left-8 flex items-end gap-3">
+          <span className="h-10 w-5 rounded-t bg-emerald-300/55" />
+          <span className="h-16 w-5 rounded-t bg-[#C9A84C]/65" />
+          <span className="h-24 w-5 rounded-t bg-emerald-300/65" />
+          <span className="h-14 w-5 rounded-t bg-white/25" />
+        </div>
+      )}
+
+      {visual.shape === 'security' && (
+        <div className="absolute left-8 top-8 h-28 w-24 rounded-b-[36px] rounded-t-2xl border border-red-300/45 bg-white/5" />
+      )}
+
+      {visual.shape === 'compliance' && (
+        <>
+          <div className="absolute left-10 top-10 h-28 w-px bg-[#C9A84C]/50" />
+          <div className="absolute left-5 top-24 h-px w-32 bg-white/25" />
+          <div className="absolute left-5 top-28 h-12 w-12 rounded-full border border-purple-300/35" />
+          <div className="absolute left-28 top-28 h-12 w-12 rounded-full border border-purple-300/35" />
+        </>
+      )}
+
+      {visual.shape === 'payments' && (
+        <div className="absolute left-8 top-14 h-24 w-44 rotate-[-6deg] rounded-2xl border border-cyan-300/35 bg-white/5 shadow-[0_0_35px_rgba(34,211,238,0.12)]" />
+      )}
+
+      {visual.shape === 'loyalty' && (
+        <>
+          <div className="absolute left-8 top-12 h-24 w-40 rounded-2xl border border-[#C9A84C]/45 bg-white/5" />
+          <div className="absolute left-20 top-8 h-24 w-1 rotate-45 bg-[#C9A84C]/50" />
+        </>
+      )}
+
+      {visual.shape === 'marketing' && (
+        <>
+          <div className="absolute left-8 top-12 h-24 w-36 rounded-full border border-pink-300/40" />
+          <div className="absolute right-10 bottom-10 flex gap-2">
+            <span className="h-3 w-3 rounded-full bg-pink-300/70" />
+            <span className="h-3 w-3 rounded-full bg-[#C9A84C]/70" />
+            <span className="h-3 w-3 rounded-full bg-white/30" />
+          </div>
+        </>
+      )}
+
+      <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-[#050912] to-transparent" />
+
+      <div className="absolute right-5 bottom-5 rounded-xl border border-[#C9A84C]/30 bg-black/40 px-3 py-1 text-xs font-bold text-[#E8C96A] backdrop-blur">
+        {String(idx + 1).padStart(2, '0')}
+      </div>
+    </div>
+  );
+};
+  return (
     <Layout>
-      <section className="bg-[linear-gradient(135deg,#050912,#0A0F1E,#0D1B3E)] px-6 py-20 text-white">
-        <div className="mx-auto max-w-6xl">
-          <p className="finxt-label mb-5">Our Services</p>
+      <section className="relative overflow-hidden bg-[#050912] px-4 py-20 text-white md:px-6 md:py-28">
+      {/* Background Image */}
+      <div
+        className="absolute inset-0 bg-no-repeat"
+        style={{
+          backgroundImage: "url('/images/services_banner.png')",
+          backgroundSize: window.innerWidth >= 768 ? '70% auto' : 'cover',
+          backgroundPosition: 'right center',
+        }}
+      />
+
+      {/* Dark overlay for text */}
+      <div className="absolute inset-0 bg-gradient-to-r from-[#050912] via-[#050912]/80 to-[#050912]/20" />
+      {/* Desktop */}
+        <div
+          className="absolute inset-0 hidden md:block bg-no-repeat"
+          style={{
+            backgroundImage: "url('/images/services_banner.png')",
+            backgroundSize: '70% auto',
+            backgroundPosition: 'right center',
+          }}
+        />
+
+        {/* Mobile */}
+        <div
+          className="absolute inset-0 md:hidden bg-no-repeat opacity-95"
+          style={{
+            backgroundImage: "url('/images/services_banner.png')",
+            backgroundSize: '185% auto',
+            backgroundPosition: '68% center',
+          }}
+        />
+  
+        <div className="relative z-10 mx-auto max-w-6xl">
+          <p className="mb-5 text-sm font-semibold tracking-[0.25em] text-[#C9A84C] uppercase">
+            Our Services
+          </p>
 
           <h1 className="finxt-heading max-w-4xl text-3xl md:text-5xl leading-tight">
-            End-to-End Operational Excellence Across{' '}
-            <span className="text-[#C9A84C]">8 Domains</span>
+            Modern AI, Automation & Digital Solutions
           </h1>
 
           <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg">
-            All services are available standalone or as a fully integrated
-            managed solution — one partner, total delivery.
+            End-to-end services designed to modernise operations, unlock insight,
+            strengthen security, and accelerate business growth.
           </p>
         </div>
       </section>
 
-      <section className="bg-[#0D1B3E] px-6 py-16 text-white">
-        <div className="mx-auto max-w-6xl space-y-8">
-          {services.map((service, index) => (
-            <article
-              key={service.title}
-              className="rounded-2xl border border-white/10 bg-[#162444] p-6 shadow-xl md:p-10"
-            >
-              <div className="grid gap-6 md:grid-cols-[80px_1fr]">
-                <div className="flex h-16 w-16 items-center justify-center rounded-2xl border border-[#C9A84C]/30 bg-white/10 text-3xl">
-                  {service.icon}
-                </div>
+<section className="relative overflow-hidden border-y border-[#C9A84C]/20 bg-[#050912] px-6 py-24 text-white">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_top,rgba(201,168,76,0.08),transparent_30%),radial-gradient(circle_at_85%_20%,rgba(56,111,255,0.13),transparent_30%),linear-gradient(180deg,#071126_0%,#050912_100%)]" />
 
-                <div>
-                  
+  <div className="relative z-10 mx-auto grid max-w-7xl grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4">
+    {services.map((service, idx) => {
+      const isOpen = openCard === idx;
 
-                  <h2 className="mb-3 text-xl font-semibold tracking-tight md:text-2xl">
-                    {service.title}
-                  </h2>
-
-                  <p className="max-w-5xl text-sm md:text-base leading-7 text-white/70">
-                    {service.text}
-                  </p>
-
-                  <ul className="mt-7 divide-y divide-white/10 text-[14px]text-white/75">
-                    {service.points.map((point) => (
-                      <li key={point} className="flex gap-3 py-3">
-                        <span className="font-bold text-[#C9A84C]">✓</span>
-                        <span>{point}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
-
-      <section className="bg-[#F4F6FB] px-6 py-20 text-center text-[#0A0F1E]">
-        <h2 className="text-2xl font-black tracking-tight md:text-4xl">
-          Ready to Discuss Your Requirements?
-        </h2>
-
-        <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-[#2D3748]">
-          Our team will build a bespoke proposal tailored to your programme
-          needs.
-        </p>
-
-        <a
-          href="/contact"
-          className="mt-8 inline-flex rounded-lg bg-[#C9A84C] px-8 py-4 text-sm font-bold text-[#0A0F1E] transition hover:bg-[#E8C96A]"
+      return (
+        <article
+          key={service.title}
+          className="group relative overflow-hidden rounded-[30px] border border-white/10 bg-[linear-gradient(180deg,rgba(255,255,255,0.06),rgba(255,255,255,0.025))] p-8 shadow-[0_15px_60px_rgba(0,0,0,0.35)] backdrop-blur-xl transition-all duration-500 hover:-translate-y-2 hover:border-[#C9A84C]/45 hover:shadow-[0_25px_80px_rgba(201,168,76,0.12)]"
         >
-          Request a Proposal →
-        </a>
-      </section>
+          <div className="absolute inset-x-0 top-0 h-[2px] bg-gradient-to-r from-transparent via-[#C9A84C] to-transparent opacity-70" />
+          <div className="absolute -right-16 -top-16 h-32 w-32 rounded-full bg-[#C9A84C]/10 blur-3xl opacity-0 transition duration-500 group-hover:opacity-100" />
+
+         <ServiceVisual idx={idx} />
+
+          <h3 className="text-xl font-black leading-snug text-white">
+            {service.title}
+          </h3>
+
+          {isOpen && (
+            <ul className="mt-6 space-y-4 text-sm leading-7 text-white/70">
+              {service.points.map((point) => (
+                <li key={point} className="flex items-start gap-3">
+                  <span className="mt-1 font-bold text-[#C9A84C]">✓</span>
+                  <span>{point}</span>
+                </li>
+              ))}
+            </ul>
+          )}
+
+          <button
+            type="button"
+            onClick={() => setOpenCard(isOpen ? null : idx)}
+            className="mt-7 inline-flex rounded-2xl border border-[#C9A84C]/35 bg-[#C9A84C]/10 px-5 py-3 text-sm font-bold text-[#E8C96A] transition hover:-translate-y-1 hover:bg-[#C9A84C] hover:text-[#0A0F1E]"
+          >
+            {isOpen ? 'Show less' : 'More info'} →
+          </button>
+        </article>
+      );
+    })}
+  </div>
+</section>
+
+<section className="relative overflow-hidden bg-[#050912] px-6 py-24 text-center text-white">
+  <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_0%,rgba(201,168,76,0.18),transparent_35%)]" />
+  <div className="absolute left-0 right-0 top-0 h-px bg-gradient-to-r from-transparent via-[#C9A84C]/50 to-transparent" />
+
+  <div className="relative z-10 mx-auto max-w-5xl overflow-hidden rounded-[36px] border border-[#C9A84C]/30 bg-[linear-gradient(135deg,rgba(255,255,255,0.10),rgba(255,255,255,0.025))] p-10 shadow-[0_24px_90px_rgba(0,0,0,0.45)] backdrop-blur-xl md:p-14">
+    <div className="absolute inset-0 bg-[radial-gradient(circle_at_15%_50%,rgba(201,168,76,0.20),transparent_25%),radial-gradient(circle_at_85%_50%,rgba(56,111,255,0.18),transparent_28%)]" />
+    <div className="absolute -right-20 -top-20 h-56 w-56 animate-pulse rounded-full bg-[#C9A84C]/20 blur-3xl" />
+    <div className="absolute -bottom-16 left-10 h-40 w-40 animate-pulse rounded-full bg-blue-500/10 blur-3xl" />
+
+    <div className="relative z-10">
+      <h2 className="text-2xl font-black tracking-tight text-white md:text-4xl">
+        Ready to Discuss Your Requirements?
+      </h2>
+
+      <p className="mx-auto mt-5 max-w-2xl text-base leading-8 text-white/75">
+        Our team will build a bespoke proposal tailored to your programme needs.
+      </p>
+
+      <a
+        href="mailto:info@finxt.uk?subject=Proposal%20Request%20-%20FinXT%20UK"
+        className="mt-8 inline-flex rounded-2xl bg-[#C9A84C] px-8 py-4 text-sm font-bold text-[#0A0F1E] shadow-[0_0_35px_rgba(201,168,76,0.30)] transition hover:-translate-y-1 hover:bg-[#E8C96A]"
+      >
+        Request a Proposal →
+      </a>
+    </div>
+  </div>
+</section>
     </Layout>
   );
 }

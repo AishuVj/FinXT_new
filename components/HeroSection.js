@@ -1,30 +1,83 @@
 import Link from 'next/link';
+import { FiBox, FiGlobe, FiTrendingUp, FiAward } from 'react-icons/fi';
 
 export default function HeroSection() {
   return (
-    <section className="relative overflow-hidden bg-[radial-gradient(circle_at_top_right,rgba(201,168,76,.18),transparent_35%),linear-gradient(135deg,#050912_0%,#0A0F1E_50%,#0D1B3E_100%)] px-6 py-24 md:py-32">
-      <div className="mx-auto max-w-7xl">
-        <p className="finxt-label mb-5">Trusted by Global Enterprises</p>
-        <h1 className="finxt-heading max-w-4xl text-3xl md:text-5xl leading-tight">
-          Powering Global Programs with <span className="text-[#C9A84C]">Precision, Speed</span> and <span className="text-[#C9A84C]">Scale</span>
-        </h1>
-        <p className="mt-6 max-w-2xl text-base leading-8 text-white/70 md:text-lg"> 
-          FinXT UK is the integrated delivery partner for organisations running complex, multi-country operations — from logistics and staffing to research and payments.
-        </p>
-        <div className="mt-10 flex flex-wrap gap-4">
-          <Link href="/services" className="rounded-lg bg-[#C9A84C] px-7 py-4 text-sm font-bold text-[#0A0F1E] transition hover:bg-[#E8C96A]">
+   <section className="relative overflow-hidden bg-[#050912] px-4 md:px-6 py-20 text-white md:py-28">
+
+  {/* Background Image */}
+  <div
+    className="absolute inset-0 bg-cover bg-center"
+    style={{
+      backgroundImage: "url('/images/hero-banner.png')",
+    }}
+  />
+
+  {/* Softer Overlay */}
+  <div className="absolute inset-0 bg-gradient-to-r from-[#050912]/80 via-[#050912]/35 to-transparent" />
+
+  {/* Content */}
+  <div className="relative z-10 mx-auto max-w-7xl">
+    <div className="max-w-xl md:ml-2 lg:ml-0">
+
+      <p className="mb-5 text-sm font-bold uppercase tracking-[0.25em] text-[#C9A84C]">
+        Trusted by Global Enterprises
+      </p>
+
+      <h1 className="finxt-heading max-w-4xl text-3xl md:text-5xl leading-tight">
+        Powering Global Programs with{' '}
+        <span className="text-[#C9A84C]">Precision, Speed</span> and{' '}
+        <span className="text-[#C9A84C]">Scale</span>
+      </h1>
+
+      <p className="mt-6 text-sm leading-7 text-white/80 md:text-base">
+        FinXT empowers financial institutions and enterprises with AI,
+        automation, and expert consulting for measurable impact.
+      </p>
+
+      {/* BUTTONS */}
+        <div className="mt-8 flex flex-col gap-3 sm:flex-row md:mt-10">
+
+          <Link
+            href="/services"
+            className="w-fit rounded-lg bg-[#C9A84C] px-6 py-4 text-sm font-bold text-[#050912] transition hover:bg-[#E6C768] sm:px-8"
+          >
             Explore Our Services →
           </Link>
-          <Link href="/contact" className="rounded-lg border border-white/25 px-7 py-4 text-sm font-bold text-white transition hover:border-[#C9A84C] hover:text-[#C9A84C]">
+
+          <Link
+            href="mailto:we@finxt.uk"
+            className="w-fit rounded-lg border border-white/20 bg-white/5 px-6 py-4 text-sm font-bold text-white backdrop-blur-sm transition hover:border-[#C9A84C] hover:text-[#C9A84C] sm:px-8"
+          >
             Schedule a Call
           </Link>
+
         </div>
-        <div className="mt-14 flex flex-wrap gap-6 border-t border-white/10 pt-8 text-sm text-white/60">
-          {['Operational in UK & Europe', 'Trusted by Global Enterprises', '30+ Countries', '100% Client Retention'].map((item) => (
-            <span key={item} className="flex items-center gap-2"><span className="h-1.5 w-1.5 rounded-full bg-[#C9A84C]" />{item}</span>
-          ))}
-        </div>
+     {/* Stats */}
+<div className="mt-12 grid grid-cols-2 gap-8 sm:grid-cols-4">
+  {[
+    [FiBox, '8', 'Service Verticals'],
+    [FiGlobe, '20+', 'Countries Reached'],
+    [FiTrendingUp, '98%', 'Client Retention'],
+    [FiAward, '5+', 'Years of Expertise'],
+  ].map(([Icon, number, label]) => (
+    <div key={label} className="flex items-start gap-3">
+      <Icon className="mt-1 text-2xl text-[#C9A84C]" />
+
+      <div>
+        <p className="text-3xl font-black text-[#C9A84C]">
+          {number}
+        </p>
+
+        <p className="mt-2 text-xs uppercase tracking-wide text-white/70">
+          {label}
+        </p>
       </div>
-    </section>
+    </div>
+  ))}
+</div>
+    </div>
+  </div>
+</section>
   );
 }
