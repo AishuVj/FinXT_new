@@ -49,7 +49,6 @@ export default function LiveStudies() {
         className="absolute inset-0 bg-no-repeat"
         style={{
           backgroundImage: "url('/images/livestudies_banner.png')",
-          backgroundSize: window.innerWidth >= 768 ? '70% auto' : 'cover',
           backgroundPosition: 'right center',
         }}
       />
@@ -57,25 +56,24 @@ export default function LiveStudies() {
       {/* Dark overlay for text */}
       <div className="absolute inset-0 bg-gradient-to-r from-[#050912] via-[#050912]/80 to-[#050912]/20" />
       {/* Desktop */}
-        <div
-          className="absolute inset-0 hidden md:block bg-no-repeat"
-          style={{
-            backgroundImage: "url('/images/livestudies_banner.png')",
-            backgroundSize: '70% auto',
-            backgroundPosition: 'right center',
-          }}
-        />
+<div
+  className="absolute inset-0 hidden md:block bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/livestudies_banner.png')",
+    backgroundSize: '72% auto',
+    backgroundPosition: 'right center',
+  }}
+/>
 
-        {/* Mobile */}
-        <div
-          className="absolute inset-0 md:hidden bg-no-repeat opacity-95"
-          style={{
-            backgroundImage: "url('/images/livestudies_banner.png')",
-            backgroundSize: '185% auto',
-            backgroundPosition: '68% center',
-          }}
-        />
-
+{/* Mobile */}
+<div
+  className="absolute inset-0 md:hidden bg-no-repeat"
+  style={{
+    backgroundImage: "url('/images/livestudies_banner.png')",
+    backgroundSize: '185% auto',
+    backgroundPosition: '68% center',
+  }}
+/>
         {/* Content */}
         
 
